@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>WebSocket Test</title>
+    <script src="https://cdn.bootcss.com/socket.io/2.0.3/socket.io.slim.js"></script>
+
+</head>
+<body>
+<script>
+    var socket = io.connect('ws://localhost:9002',{path:'/wsServlet'});
+    socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+    });
+//    var socket = new WebSocket('ws://localhost:9002/wsServlet');
+//
+//    // 打开Socket
+//    socket.onopen = function(event) {
+//        socket.send('I am the client and I\'m listening!');
+//        socket.onmessage = function (event) {
+//            console.log('Client received a message', event.data);
+//        };
+//        socket.onclose = function (event) {
+//            console.log('Client notified socket has closed', event.data);
+//        };
+//    }
+</script>
+</body>
+</html>
