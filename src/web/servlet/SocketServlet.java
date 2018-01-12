@@ -14,6 +14,7 @@ import org.apache.catalina.websocket.WebSocketServlet;
 import org.apache.catalina.websocket.WsOutbound;
 
 
+@SuppressWarnings("deprecation")
 public class SocketServlet extends WebSocketServlet {
 
     private static final long serialVersionUID = -4853540828121130946L;
